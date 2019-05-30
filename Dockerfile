@@ -15,8 +15,7 @@ RUN apt update -y -q \
  && rm foundationdb-clients_$FDB_VERSION-1_amd64.deb \
  && git clone https://github.com/apple/foundationdb.git $GOPATH/src/github.com/apple/foundationdb \
  && cd /go/src/github.com/apple/foundationdb/bindings/go \
- && git reset --hard origin/release-$FDB_VERSION \
- && ./fdb-go-install.sh localinstall
+ && ./fdb-go-install.sh localinstall --fdbver $FDB_VERSION
 
 ADD https://raw.githubusercontent.com/apple/foundationdb/master/packaging/docker/create_cluster_file.bash /scripts/create_cluster_file.bash
 RUN chmod +x /scripts/create_cluster_file.bash
