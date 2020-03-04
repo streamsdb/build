@@ -2,7 +2,7 @@ FROM golang:1.11
 ENV CGO_ENABLED 1
 ENV GOOS linux
 ENV GOARCH amd64
-ARG FDB_VERSION=6.1.10
+ARG FDB_VERSION=6.2.15
 
 WORKDIR /go/src/github.com/pjvds/streamsdb
 
